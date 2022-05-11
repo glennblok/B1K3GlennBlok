@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}List of locations{% endblock %}
+
+{% block body %}
+    <h1>All locations</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th style="text-align:center;">Name</th>
+                <th style="text-align:center;">Category</th>
+                <th style="text-align:center;">Location</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+
+                <td style="text-align:center;">{{ category.name }}</td>
+                <td style="text-align:center;">{{ category.category }}</td>
+                <td style="text-align:center;">{{ category.location }}</td>
+                <td style="text-align:center;"><img src="/{{ category.image }}" alt="ad" width="300" height="200" style="float:right;"></td>
+                <td>
+                    <a style="margin-top:83px;" class="btn btn-success" href="{{ path('category_show', {'id': category.id}) }}">show</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

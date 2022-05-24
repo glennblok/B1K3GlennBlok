@@ -12,26 +12,211 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
     }
+    .hovertext {
+        position: relative;
+        border-bottom: none;
+    }
+    .hovertext:before {
+        content: attr(data-hover);
+        visibility: hidden;
+        opacity: 0;
+        width: 100px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 5px;
+        padding: 5px 0;
+        transition: opacity 1s ease-in-out;
+
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 110%;
+    }
+
+    .hovertext:hover:before {
+        opacity: 1;
+        visibility: visible;
+    }
+
 
 </style>
+    <script>
+        function myFunctionAll() {
+            var checkBox = document.getElementById("all");
+            var text = document.getElementById("alles");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionStudy() {
+            var checkBox = document.getElementById("study");
+            var text = document.getElementById("studie");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionAct() {
+            var checkBox = document.getElementById("act");
+            var text = document.getElementById("activiteit");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionKlas() {
+            var checkBox = document.getElementById("klas");
+            var text = document.getElementById("lokalen");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionLift() {
+            var checkBox = document.getElementById("lift");
+            var text = document.getElementById("l");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionTrap() {
+            var checkBox = document.getElementById("trap");
+            var text = document.getElementById("t");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionSnacks() {
+            var checkBox = document.getElementById("snacks");
+            var text = document.getElementById("snack");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionWC() {
+            var checkBox = document.getElementById("wc");
+            var text = document.getElementById("wcs");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+
+    </script>
 <body>
 
 <div class="example-wrapper">
     <h1 style="margin-left:200px;color:white;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Welkom Bij DIFMaps! </h1>
 
 <div class="map">
-    <img src="map1st.png">
-    <div  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3" style="margin-top:-500px;margin-left:383px;">
-        <a style="background-color:red;border-radius: 50%;height:20px;width:20px;" class="test" href="http://127.0.0.1:8000/location/22"></a>
+    <img src="map1.png">
+
+    <div id="alles" style="visibility: hidden;">
+    <div id="studie">
+
+        <span class="hovertext" data-hover="Lokaal 1.01" style="margin-left:290px;top:-500px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="study.png" style="height:20px ;width:20px;"></a>
+  </span>
+
+        <span class="hovertext" data-hover="Lokaal 1.02" style="margin-left:40px;top:-500px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="study.png" style="height:20px ;width:20px;"></a>
+  </span>
+
+        <span class="hovertext" data-hover="Mediatheek" style="margin-left:-20px;top:-410px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="study.png" style="height:20px ;width:20px;"></a>
+  </span>
+
+        <span class="hovertext" data-hover="open ruimte" style="margin-left:5px;top:-500px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="study.png" style="height:20px ;width:20px;margin-left:15px;"></a>
+  </span>
+
+    </div>
+
+    <div id="lokalen">
+
+        <span class="hovertext" data-hover="Lokaal 1.03" style="margin-left:450px;top:-525px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="klas.png" style="height:20px ;width:20px;"></a>
+  </span>
+
+        <span class="hovertext" data-hover="Lokaal 1.04" style="margin-left:50px;top:-525px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="klas.png" style="height:20px ;width:20px;"></a>
+  </span>
+
+        <span class="hovertext" data-hover="Lokaal 1.05" style="margin-left:0px;top:-470px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="klas.png" style="height:20px ;width:20px;"></a>
+  </span>
+
+    </div>
+
+    <div id="activiteit">
+
+        <span class="hovertext" data-hover="Pool tafel" style="margin-left:480px;top:-160px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="act.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+  </span>
+
+        <span class="hovertext" data-hover="Ping Pong tafel" style="margin-left:-260px;top:-385px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="act.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+  </span>
+
+    </div>
+
+    <div id="l">
+        <span class="hovertext" data-hover="Lift" style="margin-left:335px;top:-222px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="lift.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+  </span>
+    </div>
+
+    <div id="t"></div>
+
+    <div id="snack">
+
+        <span class="hovertext" data-hover="Kantine" style="margin-left:345px;top:-295px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="snacks.jpg" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+  </span>
+
+    </div>
+
+    <div id="wcs">
+        <span class="hovertext" data-hover="WC's" style="margin-left:250px;top:-500px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="wc.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+  </span>
+
+        <span class="hovertext" data-hover="WC's" style="margin-left:62px;top:-233px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="wc.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+  </span>
+
+    </div>
+
+        <div id="nood">
+        <span class="hovertext" data-hover="Nooduitgang" style="margin-left:200px;top:-525px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="nood.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+  </span>
+
+            <span class="hovertext" data-hover="Nooduitgang" style="margin-left:110px;top:-192px;">
+        <a  href="http://127.0.0.1:8000/location/22"><img src="nood.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+  </span>
+        </div>
+
     </div>
 </div>
 
 
 
 
-
-
-    <div class="d-flex flex-column p-3 px-md-4 mb-3" style="background-color: white;width: 300px;height: 600px;margin-left: 730px;margin-top: -150px;">
+    <div class="d-flex flex-column p-3 px-md-4 mb-3" style="overflow: scroll;background-color: white;width: 350px;height: 600px;margin-left: 730px;margin-top: -770px;">
         <p>Verdieping</p>
         <select name="floor" id="floor" onchange="javascript:location.href = this.value;">
             <option selected value="" >Main</option>
@@ -40,36 +225,110 @@
             <option value="">B</option>
         </select><br><br><br>
 
+        <div class="all" style="margin-top:-50px;border-bottom:black solid 1px;">
+            <label for="all">Select all</label>
+            <input style="float: right;" type="checkbox" id="all" onclick="myFunctionAll()" name="all" value="all" checked>
+        </div><br>
 
         <div class="Activity">
-            <label for="1">Activity</label>
-            <input style="margin-left:120px;" type="checkbox" id="1" name="1" value="test">
+            <img src="act.png" style="height:20px;width:20px;">
+            <label for="act">Activiteiten</label>
+            <input style="float: right;" type="checkbox" id="act" name="act" value="act" onclick="myFunctionAct()">
         </div><br>
 
         <div class="Lokalen">
-            <label for="2">Lokalen</label>
-            <input style="margin-left:114px;" type="checkbox" id="2" name="2" value="test2">
+            <img src="klas.png" style="height:20px;width:20px;">
+            <label for="klas">Lokalen</label>
+            <input style="float: right;" type="checkbox" id="klas" name="klas" value="klas" onclick="myFunctionKlas()">
+        </div><br>
+
+        <div class="study">
+            <img src="study.png" style="height:20px;width:20px;">
+            <label for="study">Studeer ruimte</label>
+            <input style="float: right;" type="checkbox" id="study" name="study" value="study" onclick="myFunctionStudy()" >
         </div><br>
 
         <div class="Lift">
-            <label for="2">Lift</label>
-            <input style="margin-left:153px;" type="checkbox" id="2" name="2" value="test2">
+            <img src="lift.png" style="height:20px;width:20px;">
+            <label for="lift">Lift</label>
+            <input style="float: right;" type="checkbox" id="lift" name="lift" value="lift" onclick="myFunctionLift()">
         </div><br>
 
         <div class="Trap">
-            <label for="2">Trap</label>
-            <input style="margin-left:143px;" type="checkbox" id="2" name="2" value="test2">
+            <img src="trap.png" style="height:20px;width:20px;">
+            <label for="trap">Trap</label>
+            <input style="float: right;" type="checkbox" id="trap" name="trap" value="trap" onclick="myFunctionTrap()">
         </div><br>
 
         <div class="Snacks">
-            <label for="2">Snacks</label>
-            <input style="margin-left:120px;" type="checkbox" id="2" name="2" value="test2">
+            <img src="snacks.jpg" style="height:20px;width:20px;">
+            <label for="snacks">Eten/Drinken</label>
+            <input style="float: right;" type="checkbox" id="snacks" name="snacks" value="snacks" onclick="myFunctionSnacks()">
+        </div><br>
+
+        <div class="WC">
+            <img src="wc.png" style="height:20px;width:20px;">
+            <label for="wc">WC</label>
+            <input style="float: right;" type="checkbox" id="wc" name="wc" value="wc" onclick="myFunctionWC()">
+        </div><br><br><br>
+
+
+
+        <div class="bedrijf1">
+            <img src="#" style="height:40px;width:40px;">
+            <label>Zetacom</label>
+        </div><br>
+
+        <div class="bedrijf2">
+            <img src="#" style="height:40px;width:40px;">
+            <label>MBO Rijnland</label>
+        </div><br>
+
+        <div class="bedrijf3">
+            <img src="#" style="height:40px;width:40px;">
+            <label>Haagse Hogeschool</label>
+        </div><br>
+
+        <div class="bedrijf4">
+            <img src="#" style="height:40px;width:40px;">
+            <label>Aumatics</label>
+        </div><br>
+
+        <div class="bedrijf5">
+            <img src="#" style="height:40px;width:40px;">
+            <label>Black Gate</label>
+        </div><br>
+
+        <div class="bedrijf6">
+            <img src="#" style="height:40px;width:40px;">
+            <label>Blue Coded</label>
+        </div><br>
+
+        <div class="bedrijf7">
+            <img src="#" style="height:40px;width:40px;">
+            <label>Infinity</label>
+        </div><br>
+
+        <div class="bedrijf8">
+            <img src="#" style="height:40px;width:40px;">
+            <label>Impact Studios</label>
+        </div><br>
+
+        <div class="bedrijf9">
+            <img src="#" style="height:40px;width:40px;">
+            <label>Hudson Cybertec</label>
+        </div><br>
+
+        <div class="bedrijf10">
+            <img src="#" style="height:40px;width:40px;">
+            <label>Digi Terra</label>
         </div><br>
 
 
 
     </div>
 </div>
+
 <script type="text/javascript">
     function(){
         location.href=document.getElementById("floor").value;

@@ -18,11 +18,22 @@
 
     <div class="example-wrapper">
         <h1 style="margin-left:200px;color:white;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Welkom Bij DIFMaps! </h1>
-        <img src="second.png">
+
+        <div class="map">
+            <img src="map2.png">
+            <div  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3" style="margin-top:-480px;margin-left:500px;">
+                <a class="test" href="http://127.0.0.1:8000/location/22"><img src="klas.png" style="height:20px;width:20px;"></a>
+            </div>
+
+            <div  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3" style="margin-top:120px;margin-left:300px;">
+                <a href="http://127.0.0.1:8000/location/8"><img src="act.png" style="height:20px;width:20px;"></a>
+            </div>
+        </div>
 
 
 
-        <div class="d-flex flex-column p-3 px-md-4 mb-3 " style="background-color: white;width: 300px;height: 600px;margin-left: 730px;margin-top: -580px;">
+
+        <div class="d-flex flex-column p-3 px-md-4 mb-3 " style="background-color: white;width: 300px;height: 600px;margin-left: 730px;margin-top: -330px;">
             <p>Verdieping</p>
             <select name="floor" id="floor" onchange="javascript:location.href = this.value;">
                 <option value="http://127.0.0.1:8000/" >Main</option>
@@ -33,28 +44,45 @@
 
 
             <div class="Activity">
-                <label for="1">Activity</label>
-                <input style="margin-left:120px;" type="checkbox" id="1" name="1" value="test">
+                <img src="act.png" style="height:20px;width:20px;">
+                <label for="1">Activiteiten</label>
+                <input style="float: right;" type="checkbox" id="1" name="1" value="test">
             </div><br>
 
             <div class="Lokalen">
+                <img src="klas.png" style="height:20px;width:20px;">
                 <label for="2">Lokalen</label>
-                <input style="margin-left:114px;" type="checkbox" id="2" name="2" value="test2">
+                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
+            </div><br>
+
+            <div class="study">
+                <img src="study.png" style="height:20px;width:20px;">
+                <label for="3">Studeer ruimte</label>
+                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
             </div><br>
 
             <div class="Lift">
-                <label for="2">Lift</label>
-                <input style="margin-left:153px;" type="checkbox" id="2" name="2" value="test2">
+                <img src="lift.png" style="height:20px;width:20px;">
+                <label for="4">Lift</label>
+                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
             </div><br>
 
             <div class="Trap">
-                <label for="2">Trap</label>
-                <input style="margin-left:143px;" type="checkbox" id="2" name="2" value="test2">
+                <img src="trap.png" style="height:20px;width:20px;">
+                <label for="5">Trap</label>
+                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
             </div><br>
 
             <div class="Snacks">
-                <label for="2">Snacks</label>
-                <input style="margin-left:120px;" type="checkbox" id="2" name="2" value="test2">
+                <img src="snacks.jpg" style="height:20px;width:20px;">
+                <label for="2">Eten/Drinken</label>
+                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
+            </div><br>
+
+            <div class="WC">
+                <img src="wc.png" style="height:20px;width:20px;">
+                <label for="6">WC</label>
+                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
             </div><br>
 
 

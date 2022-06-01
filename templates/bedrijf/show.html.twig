@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bedrijf{% endblock %}
+
+{% block body %}
+    <h1>Bedrijf</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ bedrijf.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ bedrijf.name }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('bedrijf_index') }}">back to list</a>
+
+    <a href="{{ path('bedrijf_edit', {'id': bedrijf.id}) }}">edit</a>
+
+    {{ include('bedrijf/_delete_form.html.twig') }}
+{% endblock %}

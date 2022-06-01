@@ -11,16 +11,16 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class Map2Controller extends AbstractController
+#[Route('/bedrijf')]
+class BedrijfController extends AbstractController
 {
-    #[Route('/map2', name: 'map2')]
+    #[Route('/', name: 'bedrijf_index', methods: ['GET'])]
     public function index(BedrijfRepository $bedrijfRepository): Response
     {
-        return $this->render('map2/index.html.twig', [
+        return $this->render('bedrijf/index.html.twig', [
             'bedrijfs' => $bedrijfRepository->findAll(),
         ]);
     }
-
 
     #[Route('/new', name: 'bedrijf_new', methods: ['GET', 'POST'])]
     public function new(Request $request, EntityManagerInterface $entityManager): Response

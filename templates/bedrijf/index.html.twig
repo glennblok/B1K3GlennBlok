@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bedrijf index{% endblock %}
+
+{% block body %}
+
+        <tbody>
+        {% for bedrijf in bedrijfs %}
+
+                <td>{{ bedrijf.name }}</td>
+
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+
+
+    <a href="{{ path('bedrijf_new') }}">Create new</a>
+{% endblock %}

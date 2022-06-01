@@ -3,7 +3,7 @@
 {% block title %}Welkom bij Dutch Innovation Factory!{% endblock %}
 
 {% block body %}
-    <style>
+<style>
         .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 
@@ -11,88 +11,291 @@
             background-image: url('dif.jpg');
             background-repeat: no-repeat;
             background-attachment: fixed;
+            background-size: cover;
+            overflow: hidden;
+        }
+        .hovertext {
+            position: relative;
+            border-bottom: none;
+        }
+        .hovertext:before {
+            content: attr(data-hover);
+            visibility: hidden;
+            opacity: 0;
+            width: 100px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            border-radius: 5px;
+            padding: 5px 0;
+            transition: opacity 1s ease-in-out;
+
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 110%;
+        }
+
+        .hovertext:hover:before {
+            opacity: 1;
+            visibility: visible;
         }
 
     </style>
-    <body>
-
-    <div class="example-wrapper">
-        <h1 style="margin-left:200px;color:white;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Welkom Bij DIFMaps! </h1>
-
-        <div class="map">
-            <img src="map2.png">
-            <div  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3" style="margin-top:-480px;margin-left:500px;">
-                <a class="test" href="http://127.0.0.1:8000/location/22"><img src="klas.png" style="height:20px;width:20px;"></a>
-            </div>
-
-            <div  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3" style="margin-top:120px;margin-left:300px;">
-                <a href="http://127.0.0.1:8000/location/8"><img src="act.png" style="height:20px;width:20px;"></a>
-            </div>
-        </div>
-
-
-
-
-        <div class="d-flex flex-column p-3 px-md-4 mb-3 " style="background-color: white;width: 300px;height: 600px;margin-left: 730px;margin-top: -330px;">
-            <p>Verdieping</p>
-            <select name="floor" id="floor" onchange="javascript:location.href = this.value;">
-                <option value="http://127.0.0.1:8000/" >Main</option>
-                <option value="" selected>2nd floor</option>
-                <option value="http://127.0.0.1:8000/map2/">3rd floor</option>
-                <option value="">B</option>
-            </select><br><br><br>
-
-
-            <div class="Activity">
-                <img src="act.png" style="height:20px;width:20px;">
-                <label for="1">Activiteiten</label>
-                <input style="float: right;" type="checkbox" id="1" name="1" value="test">
-            </div><br>
-
-            <div class="Lokalen">
-                <img src="klas.png" style="height:20px;width:20px;">
-                <label for="2">Lokalen</label>
-                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
-            </div><br>
-
-            <div class="study">
-                <img src="study.png" style="height:20px;width:20px;">
-                <label for="3">Studeer ruimte</label>
-                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
-            </div><br>
-
-            <div class="Lift">
-                <img src="lift.png" style="height:20px;width:20px;">
-                <label for="4">Lift</label>
-                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
-            </div><br>
-
-            <div class="Trap">
-                <img src="trap.png" style="height:20px;width:20px;">
-                <label for="5">Trap</label>
-                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
-            </div><br>
-
-            <div class="Snacks">
-                <img src="snacks.jpg" style="height:20px;width:20px;">
-                <label for="2">Eten/Drinken</label>
-                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
-            </div><br>
-
-            <div class="WC">
-                <img src="wc.png" style="height:20px;width:20px;">
-                <label for="6">WC</label>
-                <input style="float: right;" type="checkbox" id="2" name="2" value="test2">
-            </div><br>
-
-
-
-        </div>
-    </div>
-    <script type="text/javascript">
-        function(){
-            location.href=document.getElementById("floor").value;
+<script>
+        function myFunctionAll() {
+            var checkBox = document.getElementById("all");
+            var text = document.getElementById("alles");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
         }
+        function myFunctionStudy() {
+            var checkBox = document.getElementById("study");
+            var text = document.getElementById("studie");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionAct() {
+            var checkBox = document.getElementById("act");
+            var text = document.getElementById("activiteit");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionKlas() {
+            var checkBox = document.getElementById("klas");
+            var text = document.getElementById("lokalen");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionLift() {
+            var checkBox = document.getElementById("lift");
+            var text = document.getElementById("l");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionTrap() {
+            var checkBox = document.getElementById("trap");
+            var text = document.getElementById("t");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionSnacks() {
+            var checkBox = document.getElementById("snacks");
+            var text = document.getElementById("snack");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+        function myFunctionWC() {
+            var checkBox = document.getElementById("wc");
+            var text = document.getElementById("wcs");
+            if (checkBox.checked == true){
+                text.style.visibility = "visible";
+            } else {
+                text.style.visibility = "hidden";
+            }
+        }
+
     </script>
-    </body>
+<body>
+<div class="example-wrapper">
+   <h1 style="margin-left:200px;color:white;text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">Welkom Bij DIFMaps! </h1>
+
+<div class="map">
+     <img src="map2.png">
+
+<div id="alles" style="visibility: hidden;">
+
+    <div id="studie">
+
+        <span class="hovertext" data-hover="Lokaal 1.01" style="margin-left:290px;top:-500px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="study.png" style="height:20px ;width:20px;"></a>
+        </span>
+
+        <span class="hovertext" data-hover="Lokaal 1.02" style="margin-left:40px;top:-500px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="study.png" style="height:20px ;width:20px;"></a>
+        </span>
+
+        <span class="hovertext" data-hover="Mediatheek" style="margin-left:-20px;top:-410px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="study.png" style="height:20px ;width:20px;"></a>
+        </span>
+
+        <span class="hovertext" data-hover="open ruimte" style="margin-left:5px;top:-500px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="study.png" style="height:20px ;width:20px;margin-left:15px;"></a>
+        </span>
+
+    </div>
+
+    <div id="lokalen">
+
+        <span class="hovertext" data-hover="Lokaal 1.03" style="margin-left:450px;top:-525px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="klas.png" style="height:20px ;width:20px;"></a>
+        </span>
+
+        <span class="hovertext" data-hover="Lokaal 1.04" style="margin-left:50px;top:-525px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="klas.png" style="height:20px ;width:20px;"></a>
+        </span>
+
+        <span class="hovertext" data-hover="Lokaal 1.05" style="margin-left:0px;top:-470px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="klas.png" style="height:20px ;width:20px;"></a>
+        </span>
+
+    </div>
+
+    <div id="activiteit">
+
+        <span class="hovertext" data-hover="Ping Pong tafel" style="margin-left:-210px;top:-335px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="act.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+        </span>
+
+    </div>
+
+    <div id="l">
+
+        <span class="hovertext" data-hover="Lift" style="margin-left:335px;top:-222px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="lift.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+        </span>
+
+    </div>
+
+    <div id="t">
+
+
+
+    </div>
+
+    <div id="snack">
+
+        <span class="hovertext" data-hover="Automaat" style="margin-left:345px;top:-295px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="snacks.jpg" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+        </span>
+
+    </div>
+
+    <div id="wcs">
+
+        <span class="hovertext" data-hover="WC's" style="margin-left:250px;top:-500px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="wc.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+        </span>
+
+        <span class="hovertext" data-hover="WC's" style="margin-left:62px;top:-233px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="wc.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+        </span>
+
+    </div>
+
+    <div id="nood">
+
+        <span class="hovertext" data-hover="Nooduitgang" style="margin-left:200px;top:-525px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="nood.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+        </span>
+
+        <span class="hovertext" data-hover="Nooduitgang" style="margin-left:110px;top:-192px;">
+            <a  href="http://127.0.0.1:8000/location/22"><img src="nood.png" style="height:20px ;width:20px;margin-left:15px;top:-75px;"></a>
+        </span>
+
+    </div>
+
+ </div>
+</div>
+
+
+<!-- Sidepanel -->
+<div class="d-flex flex-column p-3 px-md-4 mb-3" style="overflow: scroll;background-color: white;width: 350px;height: 600px;margin-left: 730px;margin-top: -770px;">
+    <p>Verdieping</p>
+    <select name="floor" id="floor" onchange="javascript:location.href = this.value;">
+        <option value="http://127.0.0.1:8000/" >Main</option>
+        <option value="http://127.0.0.1:8000/map/"selected>2nd floor</option>
+        <option value="http://127.0.0.1:8000/map2/">3rd floor</option>
+        <option value="">B</option>
+    </select><br><br><br>
+
+    <div class="all" style="margin-top:-50px;border-bottom:black solid 1px;">
+        <label for="all">Select all</label>
+        <input style="float: right;" type="checkbox" id="all" onclick="myFunctionAll()" name="all" value="all" >
+    </div><br>
+
+    <div class="Activity">
+        <img src="act.png" style="height:20px;width:20px;">
+        <label for="act">Activiteiten</label>
+        <input style="float: right;" type="checkbox" id="act" name="act" value="act" onclick="myFunctionAct()">
+    </div><br>
+
+    <div class="Lokalen">
+        <img src="klas.png" style="height:20px;width:20px;">
+        <label for="klas">Lokalen</label>
+        <input style="float: right;" type="checkbox" id="klas" name="klas" value="klas" onclick="myFunctionKlas()">
+    </div><br>
+
+    <div class="study">
+        <img src="study.png" style="height:20px;width:20px;">
+        <label for="study">Studeer ruimte</label>
+        <input style="float: right;" type="checkbox" id="study" name="study" value="study" onclick="myFunctionStudy()" >
+    </div><br>
+
+    <div class="Lift">
+        <img src="lift.png" style="height:20px;width:20px;">
+        <label for="lift">Lift</label>
+        <input style="float: right;" type="checkbox" id="lift" name="lift" value="lift" onclick="myFunctionLift()">
+    </div><br>
+
+    <div class="Trap">
+        <img src="trap.png" style="height:20px;width:20px;">
+        <label for="trap">Trap</label>
+        <input style="float: right;" type="checkbox" id="trap" name="trap" value="trap" onclick="myFunctionTrap()">
+    </div><br>
+
+    <div class="Snacks">
+        <img src="snacks.jpg" style="height:20px;width:20px;">
+        <label for="snacks">Eten/Drinken</label>
+        <input style="float: right;" type="checkbox" id="snacks" name="snacks" value="snacks" onclick="myFunctionSnacks()">
+    </div><br>
+
+    <div class="WC">
+        <img src="wc.png" style="height:20px;width:20px;">
+        <label for="wc">WC</label>
+        <input style="float: right;" type="checkbox" id="wc" name="wc" value="wc" onclick="myFunctionWC()">
+    </div><br><br><br>
+
+    {% for bedrijf in bedrijfs %}
+
+        <div>
+            <input type="color" id="head" name="head"
+                   value={{ bedrijf.kleur }}>
+            <label for="head">{{ bedrijf.name }}</label><br>
+        </div>
+    {% else %}
+        <tr>
+            <td colspan="3">no records found</td>
+        </tr>
+    {% endfor %}
+</div>
+
+</div>
+
+<script type="text/javascript">
+    function(){
+        location.href=document.getElementById("floor").value;}
+</script>
+</body>
 {% endblock %}

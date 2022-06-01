@@ -11,6 +11,8 @@
         background-image: url('dif.jpg');
         background-repeat: no-repeat;
         background-attachment: fixed;
+        background-size: cover;
+        overflow: hidden;
     }
     .hovertext {
         position: relative;
@@ -219,7 +221,7 @@
     <div class="d-flex flex-column p-3 px-md-4 mb-3" style="overflow: scroll;background-color: white;width: 350px;height: 600px;margin-left: 730px;margin-top: -770px;">
         <p>Verdieping</p>
         <select name="floor" id="floor" onchange="javascript:location.href = this.value;">
-            <option selected value="" >Main</option>
+            <option value="" selected>Main</option>
             <option value="http://127.0.0.1:8000/map/">2nd floor</option>
             <option value="http://127.0.0.1:8000/map2/">3rd floor</option>
             <option value="">B</option>
@@ -227,7 +229,7 @@
 
         <div class="all" style="margin-top:-50px;border-bottom:black solid 1px;">
             <label for="all">Select all</label>
-            <input style="float: right;" type="checkbox" id="all" onclick="myFunctionAll()" name="all" value="all" checked>
+            <input style="float: right;" type="checkbox" id="all" onclick="myFunctionAll()" name="all" value="all" >
         </div><br>
 
         <div class="Activity">
@@ -272,59 +274,18 @@
             <input style="float: right;" type="checkbox" id="wc" name="wc" value="wc" onclick="myFunctionWC()">
         </div><br><br><br>
 
+        {% for bedrijf in bedrijfs %}
 
-
-        <div class="bedrijf1">
-            <img src="#" style="height:40px;width:40px;">
-            <label>Zetacom</label>
-        </div><br>
-
-        <div class="bedrijf2">
-            <img src="#" style="height:40px;width:40px;">
-            <label>MBO Rijnland</label>
-        </div><br>
-
-        <div class="bedrijf3">
-            <img src="#" style="height:40px;width:40px;">
-            <label>Haagse Hogeschool</label>
-        </div><br>
-
-        <div class="bedrijf4">
-            <img src="#" style="height:40px;width:40px;">
-            <label>Aumatics</label>
-        </div><br>
-
-        <div class="bedrijf5">
-            <img src="#" style="height:40px;width:40px;">
-            <label>Black Gate</label>
-        </div><br>
-
-        <div class="bedrijf6">
-            <img src="#" style="height:40px;width:40px;">
-            <label>Blue Coded</label>
-        </div><br>
-
-        <div class="bedrijf7">
-            <img src="#" style="height:40px;width:40px;">
-            <label>Infinity</label>
-        </div><br>
-
-        <div class="bedrijf8">
-            <img src="#" style="height:40px;width:40px;">
-            <label>Impact Studios</label>
-        </div><br>
-
-        <div class="bedrijf9">
-            <img src="#" style="height:40px;width:40px;">
-            <label>Hudson Cybertec</label>
-        </div><br>
-
-        <div class="bedrijf10">
-            <img src="#" style="height:40px;width:40px;">
-            <label>Digi Terra</label>
-        </div><br>
-
-
+            <div>
+                <input type="color" id="head" name="head"
+                       value={{ bedrijf.kleur }}>
+                <label for="head">{{ bedrijf.name }}</label><br>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
 
     </div>
 </div>
